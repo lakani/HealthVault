@@ -1,9 +1,0 @@
-D:\Projects\HealthVault\HealthVault.Model\bin\Debug\netstandard2.0\HealthVault.Model.deps.json
-D:\Projects\HealthVault\HealthVault.Model\bin\Debug\netstandard2.0\HealthVault.Model.dll
-D:\Projects\HealthVault\HealthVault.Model\bin\Debug\netstandard2.0\HealthVault.Model.pdb
-D:\Projects\HealthVault\HealthVault.Model\obj\Debug\netstandard2.0\HealthVault.Model.csprojAssemblyReference.cache
-D:\Projects\HealthVault\HealthVault.Model\obj\Debug\netstandard2.0\HealthVault.Model.csproj.CoreCompileInputs.cache
-D:\Projects\HealthVault\HealthVault.Model\obj\Debug\netstandard2.0\HealthVault.Model.AssemblyInfoInputs.cache
-D:\Projects\HealthVault\HealthVault.Model\obj\Debug\netstandard2.0\HealthVault.Model.AssemblyInfo.cs
-D:\Projects\HealthVault\HealthVault.Model\obj\Debug\netstandard2.0\HealthVault.Model.dll
-D:\Projects\HealthVault\HealthVault.Model\obj\Debug\netstandard2.0\HealthVault.Model.pdb
