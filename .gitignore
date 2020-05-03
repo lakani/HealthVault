@@ -156,3 +156,9 @@ HealthVault.Service/obj/Debug/netcoreapp3.1/HealthVault.Service.pdb
 HealthVault.Service/obj/Debug/netcoreapp3.1/HealthVault.Service.RazorTargetAssemblyInfo.cache
 HealthVault.Service/obj/Debug/netcoreapp3.1/staticwebassets/HealthVault.Service.StaticWebAssets.Manifest.cache
 HealthVault.Service/obj/Debug/netcoreapp3.1/staticwebassets/HealthVault.Service.StaticWebAssets.xml
+HealthVault.Client/obj/Debug/netcoreapp3.1/HealthVault.Client.assets.cache
+HealthVault.Client/obj/Debug/netcoreapp3.1/HealthVault.Client.csproj.FileListAbsolute.txt
+HealthVault.Model/obj/Debug/netstandard2.0/HealthVault.model.assets.cache
+HealthVault.Model/obj/Debug/netstandard2.0/HealthVault.model.csproj.FileListAbsolute.txt
+HealthVault.Service/obj/Debug/netcoreapp3.1/HealthVault.Service.assets.cache
+HealthVault.Service/obj/Debug/netcoreapp3.1/HealthVault.Service.csproj.FileListAbsolute.txt
