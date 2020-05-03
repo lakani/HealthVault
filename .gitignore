@@ -180,3 +180,7 @@ HealthVault.Client/obj/Debug/netcoreapp3.1/HealthVault.Client.csproj.FileListAbs
 HealthVault.Client/obj/Debug/netcoreapp3.1/project.razor.json
 HealthVault.Service/obj/Debug/netcoreapp3.1/HealthVault.Service.assets.cache
 HealthVault.Service/obj/Debug/netcoreapp3.1/HealthVault.Service.csproj.FileListAbsolute.txt
+HealthVault.Client/obj/Debug/netcoreapp3.1/HealthVault.Client.exe
+HealthVault.Client/obj/Debug/netcoreapp3.1/HealthVault.Client.Views.dll
+HealthVault.Client/obj/Debug/netcoreapp3.1/RazorDeclaration/HealthVault.Client.pdb
+HealthVault.Service/obj/Debug/netcoreapp3.1/HealthVault.Service.exe
