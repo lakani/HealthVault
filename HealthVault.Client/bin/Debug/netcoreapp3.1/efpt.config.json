@@ -1,0 +1,27 @@
+﻿{
+   "ContextClassName": "HealthvaultContext",
+   "ContextNamespace": "Context",
+   "DefaultDacpacSchema": null,
+   "DoNotCombineNamespace": false,
+   "IdReplace": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": "Model",
+   "OutputContextPath": "..\\HealthVault.Service",
+   "OutputPath": "..\\HealthVault.Model",
+   "ProjectRootNamespace": "HealthVault.Entity",
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[LUTOrganizationType]"
+      }
+   ],
+   "UseDatabaseNames": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseSpatial": false
+}
