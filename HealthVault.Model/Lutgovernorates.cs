@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace HealthVault.Entity.Model
 {
-    public partial class LUTOrganizationType
+    public partial class LUTGovernorates
     {
         public short ID { get; set; }
         public string Name { get; set; }

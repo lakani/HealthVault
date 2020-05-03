@@ -18,7 +18,8 @@ namespace HealthVault.Entity.Context
         {
         }
 
-        public virtual DbSet<LutorganizationType> LutorganizationType { get; set; }
+        public virtual DbSet<LUTGovernorates> LUTGovernorates { get; set; }
+        public virtual DbSet<LUTOrganizationType> LUTOrganizationType { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -31,12 +32,13 @@ namespace HealthVault.Entity.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<LutorganizationType>(entity =>
+            modelBuilder.Entity<LUTGovernorates>(entity =>
             {
-                entity.ToTable("LUTOrganizationType");
+                entity.Property(e => e.Name).HasMaxLength(50);
+            });
 
-                entity.Property(e => e.Id).HasColumnName("ID");
-
+            modelBuilder.Entity<LUTOrganizationType>(entity =>
+            {
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(100);

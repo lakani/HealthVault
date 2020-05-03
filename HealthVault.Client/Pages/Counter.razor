@@ -11,6 +11,11 @@
     <ValidationSummary />
 
     <InputText id="name" @bind-Value="_exampleModel.Name" />
+    <InputSelect @bind-Value="_exampleModel.GovID">
+        <option value="1">Cairo</option>
+        <option value="2">Alex</option>
+        <option value="3">Qena</option>
+    </InputSelect>
 
     <button type="submit">Submit</button>
 </EditForm>
@@ -18,6 +23,7 @@
 @code {
     private int currentCount = 0;
     private string PatName { get; set; }
+    //private LUTGovernorates Govs[10];
 
      private ExampleModel _exampleModel = new ExampleModel();
 
@@ -25,8 +31,6 @@
     {
         Console.WriteLine("OnValidSubmit");
     }
-
-
     private void IncrementCount()
     {
         currentCount++;

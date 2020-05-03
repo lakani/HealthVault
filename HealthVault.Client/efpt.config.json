@@ -14,10 +14,14 @@
    "Tables": [
       {
          "HasPrimaryKey": true,
+         "Name": "[dbo].[LUTGovernorates]"
+      },
+      {
+         "HasPrimaryKey": true,
          "Name": "[dbo].[LUTOrganizationType]"
       }
    ],
-   "UseDatabaseNames": false,
+   "UseDatabaseNames": true,
    "UseDbContextSplitting": false,
    "UseFluentApiOnly": true,
    "UseHandleBars": false,
