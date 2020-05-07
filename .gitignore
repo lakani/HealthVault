@@ -184,3 +184,10 @@ HealthVault.Client/obj/Debug/netcoreapp3.1/HealthVault.Client.exe
 HealthVault.Client/obj/Debug/netcoreapp3.1/HealthVault.Client.Views.dll
 HealthVault.Client/obj/Debug/netcoreapp3.1/RazorDeclaration/HealthVault.Client.pdb
 HealthVault.Service/obj/Debug/netcoreapp3.1/HealthVault.Service.exe
+HealthVault.Client/obj/Debug/netcoreapp3.1/Razor/Components/TableComponent.razor.g.cs
+HealthVault.Client/obj/Debug/netcoreapp3.1/Razor/Pages/Binding-example.razor.g.cs
+HealthVault.Client/obj/Debug/netcoreapp3.1/RazorDeclaration/Components/ChildComponent.razor.g.cs
+HealthVault.Client/obj/Debug/netcoreapp3.1/RazorDeclaration/Components/TableComponent.razor.g.cs
+HealthVault.Client/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Binding-example.razor.g.cs
+HealthVault.Service/obj/Debug/netcoreapp3.1/project.razor.json
+.vs/HealthVault/DesignTimeBuild/.dtbcache.v2

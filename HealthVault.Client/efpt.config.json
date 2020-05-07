@@ -14,11 +14,15 @@
    "Tables": [
       {
          "HasPrimaryKey": true,
-         "Name": "[dbo].[LUTGovernorates]"
+         "Name": "[dbo].[lut_city]"
       },
       {
          "HasPrimaryKey": true,
-         "Name": "[dbo].[LUTOrganizationType]"
+         "Name": "[dbo].[lut_organizationtype]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[organization]"
       }
    ],
    "UseDatabaseNames": true,

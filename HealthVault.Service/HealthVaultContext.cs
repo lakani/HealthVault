@@ -18,8 +18,9 @@ namespace HealthVault.Entity.Context
         {
         }
 
-        public virtual DbSet<LUTGovernorates> LUTGovernorates { get; set; }
-        public virtual DbSet<LUTOrganizationType> LUTOrganizationType { get; set; }
+        public virtual DbSet<lut_city> lut_city { get; set; }
+        public virtual DbSet<lut_organizationtype> lut_organizationtype { get; set; }
+        public virtual DbSet<organization> organization { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -32,16 +33,39 @@ namespace HealthVault.Entity.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<LUTGovernorates>(entity =>
+            modelBuilder.Entity<lut_city>(entity =>
             {
+                entity.HasKey(e => e.Identifier)
+                    .HasName("PK_LUTGovernorates");
+
                 entity.Property(e => e.Name).HasMaxLength(50);
             });
 
-            modelBuilder.Entity<LUTOrganizationType>(entity =>
+            modelBuilder.Entity<lut_organizationtype>(entity =>
             {
+                entity.HasKey(e => e.Identifier)
+                    .HasName("PK_LUTOrganizationType");
+
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(100);
+            });
+
+            modelBuilder.Entity<organization>(entity =>
+            {
+                entity.HasKey(e => e.identifier);
+
+                entity.Property(e => e.address).HasMaxLength(100);
+
+                entity.Property(e => e.alias).HasMaxLength(100);
+
+                entity.Property(e => e.name).HasMaxLength(100);
+
+                entity.Property(e => e.telecom).HasMaxLength(20);
+
+                entity.Property(e => e.telecom1).HasMaxLength(20);
+
+                entity.Property(e => e.telecom2).HasMaxLength(20);
             });
 
             OnModelCreatingPartial(modelBuilder);

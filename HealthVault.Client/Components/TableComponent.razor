@@ -1,0 +1,43 @@
+<div class="panel panel-default" style="border: 1px;">
+    <div class="panel-heading">@Title</div>
+    <div class="panel-body" @onclick="OnClickCallback">@ChildContent</div>
+    <p >End of Com</p>    
+
+    <table>
+        @for (int y=0; y<RowsCount; y++)
+        {
+            <tr>
+                @for (int x=0; x<CollsCount; x++)
+                {
+                    <td>@y : @x</td>
+                }
+            </tr>
+        }
+    </table>
+
+</div>
+
+@code {
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public int RowsCount { get; set; }
+
+    [Parameter]
+    public int CollsCount { get; set; }
+
+    [Parameter]
+    public string CellData { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
+
+    public void AddRow()
+    {
+        RowsCount++;
+    }
+}

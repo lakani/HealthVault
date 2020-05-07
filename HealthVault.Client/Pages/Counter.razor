@@ -17,6 +17,48 @@
         <option value="3">Qena</option>
     </InputSelect>
 
+    <p>
+        <label>
+            Identifier:
+            <InputText @bind-Value="_exampleModel.Identifier" />
+        </label>
+    </p>
+    <p>
+        <label>
+            Description (optional):
+            <InputTextArea @bind-Value="_exampleModel.Description" />
+        </label>
+    </p>
+    <p>
+        <label>
+            Primary Classification:
+            <InputSelect @bind-Value="_exampleModel.Classification">
+                <option value="">Select classification ...</option>
+                <option value="Exploration">Exploration</option>
+                <option value="Diplomacy">Diplomacy</option>
+                <option value="Defense">Defense</option>
+            </InputSelect>
+        </label>
+    </p>
+    <p>
+        <label>
+            Maximum Accommodation:
+            <InputNumber @bind-Value="_exampleModel.MaximumAccommodation" />
+        </label>
+    </p>
+    <p>
+        <label>
+            Engineering Approval:
+            <InputCheckbox @bind-Value="_exampleModel.IsValidatedDesign" />
+        </label>
+    </p>
+    <p>
+        <label>
+            Production Date:
+            <InputDate @bind-Value="_exampleModel.ProductionDate" />
+        </label>
+    </p>
+
     <button type="submit">Submit</button>
 </EditForm>
 
