@@ -191,3 +191,9 @@ HealthVault.Client/obj/Debug/netcoreapp3.1/RazorDeclaration/Components/TableComp
 HealthVault.Client/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Binding-example.razor.g.cs
 HealthVault.Service/obj/Debug/netcoreapp3.1/project.razor.json
 .vs/HealthVault/DesignTimeBuild/.dtbcache.v2
+*.dll
+*.pdb
+/HealthVault.Client/HealthVault.Client.csproj.user
+/HealthVault.Shared/obj
+/HealthVault.Service/obj/Debug/netcoreapp3.1
+/HealthVault.Shared/bin/Debug/netstandard2.0
