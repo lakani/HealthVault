@@ -15,7 +15,8 @@ namespace HealthVault.Entity.Model
         public string telecom1 { get; set; }
         public string telecom2 { get; set; }
         public string address { get; set; }
-        public short? city { get; set; }
+        public short? address_city { get; set; }
+        public short? address_state { get; set; }
         public int? partOf { get; set; }
     }
 }

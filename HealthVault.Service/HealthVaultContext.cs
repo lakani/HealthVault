@@ -3,7 +3,6 @@ using HealthVault.Entity.Model;
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using HealthVault.Entity.Model;
 
 namespace HealthVault.Entity.Context
 {

@@ -11,8 +11,8 @@ using HealthVault.Shared.System.Extensions;
 
 namespace HealthVault.Service.Controllers  
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    //[Route("api/[controller]")]
+    //[ApiController]
     public class CodesController : ControllerBase
     {  
   
