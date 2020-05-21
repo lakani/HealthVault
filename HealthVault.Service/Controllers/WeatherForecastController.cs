@@ -23,6 +23,7 @@ namespace HealthVault.Service.Controllers
             _logger = logger;
         }
 
+        //https://localhost:5001/weatherforecast
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {

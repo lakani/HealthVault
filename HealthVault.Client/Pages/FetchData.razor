@@ -1,7 +1,17 @@
 ﻿@page "/fetchdata"
 
 @using HealthVault.Client.Data
+@using HealthVault.Entity
+@using HealthVault.Entity.Model
+@using System.Linq
+@using System.Collections.Generic
+@using System.Net.Http
+@using System.Threading.Tasks
+@using System.Net
+@using System.Text.Json 
+@*@using RestApi.Shared*@
 @inject WeatherForecastService ForecastService
+@inject HttpClient Http
 
 <h1>Weather forecast</h1>
 
@@ -41,6 +51,31 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        //IHttpClientFactory _clientFactory;
+        //forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        var s = await Http.GetStringAsync("https://localhost:5001/weatherforecast");
+        forecasts = JsonSerializer.Deserialize<WeatherForecast[]>(s);
+
+        string ss = s;
+
+
+
+        //var request = new HttpRequestMessage(HttpMethod.Get,
+        //"repos/aspnet/AspNetCore.Docs/pulls");
+
+        //var client = IHttpClientFactory.CreateClient("github");
+
+        //var response = await client.SendAsync(request);
+
+        //if (response.IsSuccessStatusCode)
+        //{
+        //    using var responseStream = await response.Content.ReadAsStreamAsync();
+        //    PullRequests = await JsonSerializer.DeserializeAsync
+        //            <IEnumerable<WeatherForecast>>(responseStream);
+        //}
+
+
+
+
     }
 }

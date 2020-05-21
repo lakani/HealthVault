@@ -1,57 +1,7 @@
-﻿@using HealthVault.Client.Components
-
-@page "/"
+﻿@page "/"
 
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
 
-
-
-<TableComponent @ref="_Tbl" Title="Sama & Hala" OnClickCallback="@ShowMessage" RowsCount="2" CollsCount="2" >
-    <SurveyPrompt Title="How is Blazor working for you?" />
-</TableComponent>
-
-<input id="useIndividualParams"
-       maxlength="@Maxlength"
-       placeholder="@Placeholder"
-       required="@Required"
-       @attributes="InputAttributes"
-        />
-
-<input id="useAttributesDict"
-       @attributes="InputAttributes" />
-
-@code{
-    private TableComponent _Tbl;
-    private void ShowMessage()
-    {
-        // does nothing
-        int x = 0;
-        x ++;
-        _Tbl.AddRow();
-        StateHasChanged();
-    }
-
-    [Parameter]
-    public string Maxlength { get; set; } = "10";
-
-    [Parameter]
-    public string Placeholder { get; set; } = "Input placeholder text";
-
-    [Parameter]
-    public string Required { get; set; } = "required";
-
-    [Parameter]
-    public string Size { get; set; } = "50";
-
-    [Parameter]
-    public Dictionary<string, object> InputAttributes { get; set; } =
-        new Dictionary<string, object>()
-        {
-            { "maxlength", "10" },
-            { "placeholder", "Input placeholder text" },
-            { "required", "required" },
-            { "size", "50" }
-        };
-}
+<SurveyPrompt Title="How is Blazor working for you?" />

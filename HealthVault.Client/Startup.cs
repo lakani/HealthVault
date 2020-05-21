@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using HealthVault.Client.Data;
+using System.Net.Http;
 
 namespace HealthVault.Client
 {
@@ -29,6 +30,34 @@ namespace HealthVault.Client
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+
+            // Server Side Blazor doesn't register HttpClient by default
+            if (!services.Any(x => x.ServiceType == typeof(HttpClient)))
+            {
+                // Setup HttpClient for server side in a client side compatible fashion
+                services.AddScoped<HttpClient>(s =>
+                {
+                    // Creating the URI helper needs to wait until the JS Runtime is initialized, so defer it.
+                    var uriHelper = s.GetRequiredService<NavigationManager>();
+                    return new HttpClient
+                    {
+                        BaseAddress = new Uri(uriHelper.BaseUri)
+                    };
+                });
+            }
+
+            //services.AddHttpClient("HealthVault.Service", c =>
+            //{
+            //    //c.BaseAddress = new Uri("https://api.github.com/");
+            //    //https://localhost:5001
+            //    c.BaseAddress = new Uri("https://localhost:5001/");
+
+            //    // Github API versioning
+            //    //c.DefaultRequestHeaders.Add("Accept", "application/vnd.github.v3+json");
+            //    // Github requires a user-agent
+            //    //c.DefaultRequestHeaders.Add("User-Agent", "HttpClientFactory-Sample");
+            //});
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

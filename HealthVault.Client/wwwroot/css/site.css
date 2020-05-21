@@ -14,10 +14,6 @@ a, .btn-link {
     border-color: #1861ac;
 }
 
-table, th, td {
-    border: 1px solid black;
-  }
-
 app {
     position: relative;
     display: flex;

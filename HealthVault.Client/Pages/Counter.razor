@@ -1,78 +1,14 @@
-﻿@using HealthVault.Entity.Model
-@page "/counter"
+﻿@page "/counter"
 
-<h1>Ticket</h1>
+<h1>Counter</h1>
 
-@* <p>Current count: @currentCount</p> *@
-@* <button class="btn btn-primary" @onclick="IncrementCount">Click me</button> *@
+<p>Current count: @currentCount</p>
 
-<EditForm Model="@_exampleModel" OnValidSubmit="HandleValidSubmit">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
-
-    <InputText id="name" @bind-Value="_exampleModel.Name" />
-    <InputSelect @bind-Value="_exampleModel.GovID">
-        <option value="1">Cairo</option>
-        <option value="2">Alex</option>
-        <option value="3">Qena</option>
-    </InputSelect>
-
-    <p>
-        <label>
-            Identifier:
-            <InputText @bind-Value="_exampleModel.Identifier" />
-        </label>
-    </p>
-    <p>
-        <label>
-            Description (optional):
-            <InputTextArea @bind-Value="_exampleModel.Description" />
-        </label>
-    </p>
-    <p>
-        <label>
-            Primary Classification:
-            <InputSelect @bind-Value="_exampleModel.Classification">
-                <option value="">Select classification ...</option>
-                <option value="Exploration">Exploration</option>
-                <option value="Diplomacy">Diplomacy</option>
-                <option value="Defense">Defense</option>
-            </InputSelect>
-        </label>
-    </p>
-    <p>
-        <label>
-            Maximum Accommodation:
-            <InputNumber @bind-Value="_exampleModel.MaximumAccommodation" />
-        </label>
-    </p>
-    <p>
-        <label>
-            Engineering Approval:
-            <InputCheckbox @bind-Value="_exampleModel.IsValidatedDesign" />
-        </label>
-    </p>
-    <p>
-        <label>
-            Production Date:
-            <InputDate @bind-Value="_exampleModel.ProductionDate" />
-        </label>
-    </p>
-
-    <button type="submit">Submit</button>
-</EditForm>
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
     private int currentCount = 0;
-    private string PatName { get; set; }
-    //private LUTGovernorates Govs[10];
 
-     private ExampleModel _exampleModel = new ExampleModel();
-
-    private void HandleValidSubmit()
-    {
-        Console.WriteLine("OnValidSubmit");
-    }
     private void IncrementCount()
     {
         currentCount++;

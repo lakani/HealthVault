@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthVault.Client", "HealthVault.Client\HealthVault.Client.csproj", "{F972D38A-34C7-48F2-BCFC-8C6712650238}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthVault.Model", "HealthVault.Model\HealthVault.Model.csproj", "{944466F4-8779-4623-AB3B-60AAA911D8FE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthVault.Service", "HealthVault.Service\HealthVault.Service.csproj", "{9BD020E6-C198-4F74-B9C6-B44E597A9619}"
@@ -13,6 +11,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthVault.Service", "Heal
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthVault.Shared", "HealthVault.Shared\HealthVault.Shared.csproj", "{151A6950-A77B-4957-BA61-7676B66BD35E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{944466F4-8779-4623-AB3B-60AAA911D8FE} = {944466F4-8779-4623-AB3B-60AAA911D8FE}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthVault.Client", "HealthVault.Client\HealthVault.Client.csproj", "{610DA38D-C6CA-4D70-9581-CD6F2623E7A3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9BD020E6-C198-4F74-B9C6-B44E597A9619} = {9BD020E6-C198-4F74-B9C6-B44E597A9619}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,18 +30,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F972D38A-34C7-48F2-BCFC-8C6712650238}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F972D38A-34C7-48F2-BCFC-8C6712650238}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F972D38A-34C7-48F2-BCFC-8C6712650238}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{F972D38A-34C7-48F2-BCFC-8C6712650238}.Debug|x64.Build.0 = Debug|Any CPU
-		{F972D38A-34C7-48F2-BCFC-8C6712650238}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{F972D38A-34C7-48F2-BCFC-8C6712650238}.Debug|x86.Build.0 = Debug|Any CPU
-		{F972D38A-34C7-48F2-BCFC-8C6712650238}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F972D38A-34C7-48F2-BCFC-8C6712650238}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F972D38A-34C7-48F2-BCFC-8C6712650238}.Release|x64.ActiveCfg = Release|Any CPU
-		{F972D38A-34C7-48F2-BCFC-8C6712650238}.Release|x64.Build.0 = Release|Any CPU
-		{F972D38A-34C7-48F2-BCFC-8C6712650238}.Release|x86.ActiveCfg = Release|Any CPU
-		{F972D38A-34C7-48F2-BCFC-8C6712650238}.Release|x86.Build.0 = Release|Any CPU
 		{944466F4-8779-4623-AB3B-60AAA911D8FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{944466F4-8779-4623-AB3B-60AAA911D8FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{944466F4-8779-4623-AB3B-60AAA911D8FE}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -72,6 +66,18 @@ Global
 		{151A6950-A77B-4957-BA61-7676B66BD35E}.Release|x64.Build.0 = Release|Any CPU
 		{151A6950-A77B-4957-BA61-7676B66BD35E}.Release|x86.ActiveCfg = Release|Any CPU
 		{151A6950-A77B-4957-BA61-7676B66BD35E}.Release|x86.Build.0 = Release|Any CPU
+		{610DA38D-C6CA-4D70-9581-CD6F2623E7A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{610DA38D-C6CA-4D70-9581-CD6F2623E7A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{610DA38D-C6CA-4D70-9581-CD6F2623E7A3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{610DA38D-C6CA-4D70-9581-CD6F2623E7A3}.Debug|x64.Build.0 = Debug|Any CPU
+		{610DA38D-C6CA-4D70-9581-CD6F2623E7A3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{610DA38D-C6CA-4D70-9581-CD6F2623E7A3}.Debug|x86.Build.0 = Debug|Any CPU
+		{610DA38D-C6CA-4D70-9581-CD6F2623E7A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{610DA38D-C6CA-4D70-9581-CD6F2623E7A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{610DA38D-C6CA-4D70-9581-CD6F2623E7A3}.Release|x64.ActiveCfg = Release|Any CPU
+		{610DA38D-C6CA-4D70-9581-CD6F2623E7A3}.Release|x64.Build.0 = Release|Any CPU
+		{610DA38D-C6CA-4D70-9581-CD6F2623E7A3}.Release|x86.ActiveCfg = Release|Any CPU
+		{610DA38D-C6CA-4D70-9581-CD6F2623E7A3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
