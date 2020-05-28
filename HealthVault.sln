@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthVault.Shared", "Healt
 		{944466F4-8779-4623-AB3B-60AAA911D8FE} = {944466F4-8779-4623-AB3B-60AAA911D8FE}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthVault.Client", "HealthVault.Client\HealthVault.Client.csproj", "{610DA38D-C6CA-4D70-9581-CD6F2623E7A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthVault.Web.Client", "HealthVault.Web.Client\HealthVault.Web.Client.csproj", "{610DA38D-C6CA-4D70-9581-CD6F2623E7A3}"
 	ProjectSection(ProjectDependencies) = postProject
 		{9BD020E6-C198-4F74-B9C6-B44E597A9619} = {9BD020E6-C198-4F74-B9C6-B44E597A9619}
 	EndProjectSection

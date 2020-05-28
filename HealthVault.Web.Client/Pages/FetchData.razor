@@ -1,16 +1,16 @@
 ﻿@page "/fetchdata"
 
-@using HealthVault.Client.Data
 @using HealthVault.Entity
 @using HealthVault.Entity.Model
 @using System.Linq
 @using System.Collections.Generic
 @using System.Net.Http
 @using System.Threading.Tasks
+@using HealthVault.Entity.Model
 @using System.Net
 @using System.Text.Json 
 @*@using RestApi.Shared*@
-@inject WeatherForecastService ForecastService
+@*@inject WeatherForecastService ForecastService*@
 @inject HttpClient Http
 
 <h1>Weather forecast</h1>
@@ -47,14 +47,14 @@ else
 }
 
 @code {
-    private WeatherForecast[] forecasts;
+    private WeatherForecastModel[] forecasts;
 
     protected override async Task OnInitializedAsync()
     {
         //IHttpClientFactory _clientFactory;
         //forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
         var s = await Http.GetStringAsync("https://localhost:5001/weatherforecast");
-        forecasts = JsonSerializer.Deserialize<WeatherForecast[]>(s);
+        forecasts = JsonSerializer.Deserialize<WeatherForecastModel[]>(s);
 
         string ss = s;
 

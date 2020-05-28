@@ -1,0 +1,42 @@
+﻿@using HealthVault.Entity.Model
+@using System.Text.Json
+@page "/counter"
+@inject HttpClient Http
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<div class="col-md-4">
+    <select class="form-control" >
+        <option value="">-- Select City --</option>
+        @if (cities != null)
+        {
+            @foreach (var city in cities)
+            {
+                <option value="@city.Name">@city.Name</option>
+
+            }
+        }
+    </select>
+</div>
+
+<div class="row" style="padding-top:50px"> </div> 
+        
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int currentCount = 0;
+    lut_city[] cities;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var s = await Http.GetStringAsync("https://localhost:5001/v1/api/codes/city");
+        cities = JsonSerializer.Deserialize<lut_city[]>(s);
+    }
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
