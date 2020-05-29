@@ -83,3 +83,4 @@ D:\Projects\HealthVault\HealthVault.Web.Client\obj\Debug\netcoreapp3.1\HealthVau
 D:\Projects\HealthVault\HealthVault.Web.Client\obj\Debug\netcoreapp3.1\staticwebassets\HealthVault.Web.Client.StaticWebAssets.Manifest.cache
 D:\Projects\HealthVault\HealthVault.Web.Client\obj\Debug\netcoreapp3.1\staticwebassets\HealthVault.Web.Client.StaticWebAssets.xml
 D:\Projects\HealthVault\HealthVault.Web.Client\obj\Debug\netcoreapp3.1\HealthVault.Web.Client.genruntimeconfig.cache
+D:\Projects\HealthVault\HealthVault.Web.Client\obj\Debug\netcoreapp3.1\HealthVault.Web.Client.csprojAssemblyReference.cache

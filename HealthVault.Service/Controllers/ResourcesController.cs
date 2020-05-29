@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using HealthVault.Entity.Model;
-using HealthVault.Entity.Context;
+
 
 
 namespace HealthVault.Service.Controllers
@@ -33,22 +33,31 @@ namespace HealthVault.Service.Controllers
         [HttpGet]
         //[Route("v1/api/resources/organization/")]
         [Route("v1/api/resources/organization/")]
-        public IEnumerable<organization> GetOrganization(string Identifier, string addressCity)
+        public IEnumerable<organization> GetOrganization(   string Identifier, 
+                                                            string addressCity, 
+                                                            string partof, 
+                                                            string type,
+                                                            string active,
+                                                            string addressState)
         {
             var db = new HealthvaultContext();
 
             try
             {
-                if (string.IsNullOrEmpty(Identifier))
+                if (string.IsNullOrEmpty(Identifier) &&
+                    string.IsNullOrEmpty(addressCity) &&
+                    string.IsNullOrEmpty(partof) &&
+                    string.IsNullOrEmpty(type))
+                {
                     return db.organization.ToList();
+                }
+                    
                 else
                 {
-                    short res;
-                    if (false == short.TryParse(Identifier, out res))
-                        throw new ArgumentOutOfRangeException("identifier");
-
+                    organization FilterObj = organization.ConvertParams(Identifier, active, type, addressCity, addressState, partof); 
+                    
                     return from c in db.organization
-                           where c.identifier == res
+                           where c.identifier == FilterObj.identifier
                            select c;
                 }
             }
