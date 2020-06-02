@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthVault.Model", "HealthVault.Model\HealthVault.Model.csproj", "{7733E19B-239E-4FA7-886C-548C5C7425D4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthVault.Shared", "HealthVault.Shared\HealthVault.Shared.csproj", "{30F055B5-9233-4506-B304-09BC05D0DDBA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7733E19B-239E-4FA7-886C-548C5C7425D4} = {7733E19B-239E-4FA7-886C-548C5C7425D4}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthVault.Web.Client", "HealthVault.Web.Client\HealthVault.Web.Client.csproj", "{2FA33080-1DD0-4D0F-975A-BF11109013E6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{30F055B5-9233-4506-B304-09BC05D0DDBA} = {30F055B5-9233-4506-B304-09BC05D0DDBA}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7733E19B-239E-4FA7-886C-548C5C7425D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7733E19B-239E-4FA7-886C-548C5C7425D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7733E19B-239E-4FA7-886C-548C5C7425D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7733E19B-239E-4FA7-886C-548C5C7425D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30F055B5-9233-4506-B304-09BC05D0DDBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30F055B5-9233-4506-B304-09BC05D0DDBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30F055B5-9233-4506-B304-09BC05D0DDBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30F055B5-9233-4506-B304-09BC05D0DDBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FA33080-1DD0-4D0F-975A-BF11109013E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FA33080-1DD0-4D0F-975A-BF11109013E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FA33080-1DD0-4D0F-975A-BF11109013E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FA33080-1DD0-4D0F-975A-BF11109013E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85F73DA1-20FD-4D84-A8AB-A7F15B583B70}
+	EndGlobalSection
+EndGlobal

@@ -31,8 +31,12 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var s = await Http.GetStringAsync("https://localhost:5001/v1/api/codes/city");
-        cities = JsonSerializer.Deserialize<lut_city[]>(s);
+        var s = await Http.GetByteArrayAsync("https://localhost:5001/v1/api/codes/city");
+        var options = new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+        };
+        cities = JsonSerializer.Deserialize<lut_city[]>(s, options);
     }
 
     private void IncrementCount()

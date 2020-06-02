@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using HealthVault.Entity.Model;
+using HealthVault.Shared;
+using HealthVault.DAL;
 
 
 
@@ -40,8 +42,6 @@ namespace HealthVault.Service.Controllers
                                                             string active,
                                                             string addressState)
         {
-            var db = new HealthvaultContext();
-
             try
             {
                 if (string.IsNullOrEmpty(Identifier) &&
@@ -49,16 +49,15 @@ namespace HealthVault.Service.Controllers
                     string.IsNullOrEmpty(partof) &&
                     string.IsNullOrEmpty(type))
                 {
-                    return db.organization.ToList();
+                    OrganizationDAL OrgDAL = new OrganizationDAL();
+                    return OrgDAL.GetAll();
                 }
                     
                 else
                 {
-                    organization FilterObj = organization.ConvertParams(Identifier, active, type, addressCity, addressState, partof); 
-                    
-                    return from c in db.organization
-                           where c.identifier == FilterObj.identifier
-                           select c;
+                    organization FilterObj = organizationExt.ConvertParams(Identifier, active, type, addressCity, addressState, partof);
+                    OrganizationDAL OrgDAL = new OrganizationDAL();
+                    return OrgDAL.Filter(FilterObj);
                 }
             }
             catch (Exception e)
@@ -72,15 +71,18 @@ namespace HealthVault.Service.Controllers
         [Route("v1/api/resources/{or}/download")]
         public IEnumerable<organization> GetDownload(string or/*string res/*, string Identifier*/)
         {
-            var db = new HealthvaultContext();
-
             try
             {
-                return db.organization.ToList();
+                var rng = new Random();
+                return Enumerable.Range(1, 5).Select(index => new organization
+                {
+                    active = true,
+                    name = "Test"
+                })
+                .ToArray();
             }
             catch (Exception e)
             {
-
                 throw e;
             }
 

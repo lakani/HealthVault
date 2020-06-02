@@ -4,7 +4,7 @@
    "DefaultDacpacSchema": null,
    "DoNotCombineNamespace": false,
    "IdReplace": false,
-   "IncludeConnectionString": false,
+   "IncludeConnectionString": true,
    "ModelNamespace": "Entity.Model",
    "OutputContextPath": "D:\\Projects\\HealthVault\\HealthVault.DAL",
    "OutputPath": "D:\\Projects\\HealthVault\\HealthVault.Model",

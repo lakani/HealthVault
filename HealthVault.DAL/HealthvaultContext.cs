@@ -3,7 +3,6 @@ using HealthVault.Entity.Model;
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using HealthVault.Entity.Model;
 
 namespace HealthVault.Entity.Context
 {
@@ -21,6 +20,15 @@ namespace HealthVault.Entity.Context
         public virtual DbSet<lut_city> lut_city { get; set; }
         public virtual DbSet<lut_organizationtype> lut_organizationtype { get; set; }
         public virtual DbSet<organization> organization { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=HealthVault;User ID=sa;Password=get@get1");
+            }
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
