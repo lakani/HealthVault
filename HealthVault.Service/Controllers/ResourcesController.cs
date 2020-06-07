@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+﻿using HealthVault.DAL;
 using HealthVault.Entity.Model;
 using HealthVault.Shared;
-using HealthVault.DAL;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 
 
@@ -35,9 +33,9 @@ namespace HealthVault.Service.Controllers
         [HttpGet]
         //[Route("v1/api/resources/organization/")]
         [Route("v1/api/resources/organization/")]
-        public IEnumerable<organization> GetOrganization(   string Identifier, 
-                                                            string addressCity, 
-                                                            string partof, 
+        public IEnumerable<organization> GetOrganization(string Identifier,
+                                                            string addressCity,
+                                                            string partof,
                                                             string type,
                                                             string active,
                                                             string addressState)
@@ -52,7 +50,7 @@ namespace HealthVault.Service.Controllers
                     OrganizationDAL OrgDAL = new OrganizationDAL();
                     return OrgDAL.GetAll();
                 }
-                    
+
                 else
                 {
                     organization FilterObj = organizationExt.ConvertParams(Identifier, active, type, addressCity, addressState, partof);

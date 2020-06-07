@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace HealthVault.Shared.System.Extensions
+﻿namespace HealthVault.Shared.System.Extensions
 {
     public static class ShortExt
     {

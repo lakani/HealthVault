@@ -1,27 +1,22 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using HealthVault.Entity.Model;
 using HealthVault.DAL;
-using HealthVault.Shared.System.Extensions;
+using HealthVault.Entity.Model;
 using HealthVault.Shared;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
-namespace HealthVault.Service.Controllers  
+namespace HealthVault.Service.Controllers
 {
     //[Route("api/[controller]")]
     //[ApiController]
     public class CodesController : ControllerBase
-    {  
-  
+    {
+
         //[HttpGet]
         //public IEnumerable<WeatherForecast> Get()
 
-        [HttpGet]  
-        [Route("v1/api/codes/city")]  
-        public IEnumerable<lut_city> GetCity(string Identifier)  
+        [HttpGet]
+        [Route("v1/api/codes/city")]
+        public IEnumerable<lut_city> GetCity(string Identifier)
         {
             try
             {
@@ -29,7 +24,7 @@ namespace HealthVault.Service.Controllers
 
                 if (string.IsNullOrEmpty(Identifier))
                 {
-                      return codesDAL.lut_city_GetAll();
+                    return codesDAL.lut_city_GetAll();
                 }
                 else
                 {
@@ -42,7 +37,7 @@ namespace HealthVault.Service.Controllers
                 throw;
             }
         }
-    
+
 
         //lut_organizationtype
         [HttpGet]
@@ -67,5 +62,5 @@ namespace HealthVault.Service.Controllers
             }
         }
 
-    }  
-}  
+    }
+}

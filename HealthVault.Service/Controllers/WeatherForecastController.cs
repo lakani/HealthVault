@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using HealthVault.Entity.Model;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using HealthVault.Entity.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace HealthVault.Service.Controllers
 {

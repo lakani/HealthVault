@@ -1,10 +1,7 @@
-﻿using System;
+﻿using HealthVault.Entity.Context;
 using System.Collections.Generic;
 using System.Linq;
-using Model = HealthVault.Entity.Model ;
-using HealthVault.Entity.Context;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
+using Model = HealthVault.Entity.Model;
 
 namespace HealthVault.DAL
 {
@@ -17,11 +14,11 @@ namespace HealthVault.DAL
         }
         public IEnumerable<Model.organization> Filter(Model.organization filterObj)
         {
-            
+
             var db = new HealthvaultContext();
 
-            var ret =   from o in db.organization
-                        select o;
+            var ret = from o in db.organization
+                      select o;
 
             if (filterObj.identifier > 0)
                 ret = ret.Where(o => o.identifier == filterObj.identifier);
@@ -31,9 +28,9 @@ namespace HealthVault.DAL
                 ret = ret.Where(o => o.partOf == filterObj.partOf);
             if (filterObj.type > 0)
                 ret = ret.Where(o => o.type == filterObj.type);
-            
+
             return ret.ToList();
         }
-        
+
     }
 }

@@ -1,7 +1,5 @@
-﻿using System;
-using HealthVault.Entity.Model;
-using System.Collections.Generic;
-using System.Text;
+﻿using HealthVault.Entity.Model;
+using System;
 
 namespace HealthVault.Shared
 {

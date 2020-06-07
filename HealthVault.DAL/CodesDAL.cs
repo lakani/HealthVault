@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
-using Model = HealthVault.Entity.Model;
-using HealthVault.Entity.Context;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
+﻿using HealthVault.Entity.Context;
 using HealthVault.Entity.Model;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace HealthVault.DAL
 {
@@ -23,7 +18,7 @@ namespace HealthVault.DAL
             var db = new HealthvaultContext();
 
             return from c in db.lut_city
-                   where (filterObj.Identifier > 0 && c.Identifier == filterObj.Identifier) 
+                   where (filterObj.Identifier > 0 && c.Identifier == filterObj.Identifier)
                    select c;
         }
 
