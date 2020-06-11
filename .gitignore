@@ -199,3 +199,6 @@ HealthVault.Service/obj/Debug/netcoreapp3.1/project.razor.json
 /HealthVault.Shared/bin/Debug/netstandard2.0
 /HealthVault.Client/obj/Debug/netcoreapp3.1
 /HealthVault.DAL/obj
+/HealthVault.Model/obj/Release/netstandard2.0
+/HealthVault.Service/obj/Release/netcoreapp3.1
+/HealthVault.Web.Client/obj
