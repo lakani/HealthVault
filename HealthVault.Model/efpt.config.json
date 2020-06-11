@@ -23,6 +23,10 @@
       {
          "HasPrimaryKey": true,
          "Name": "[dbo].[organization]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Patient]"
       }
    ],
    "UseDatabaseNames": true,
