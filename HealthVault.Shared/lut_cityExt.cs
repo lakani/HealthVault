@@ -1,9 +1,9 @@
 ﻿using HealthVault.Entity.Model;
 using System;
 
-namespace HealthVault.Shared
+namespace HealthVault.Shared.ParamsConverter
 {
-    public partial class lut_cityExt
+    public partial class lut_cityConverter
     {
         public static lut_city ConvertParams(string Identifier)
         {

@@ -1,9 +1,9 @@
 ﻿using HealthVault.Entity.Model;
 using System;
 
-namespace HealthVault.Shared
+namespace HealthVault.Shared.ParamsConverter
 {
-    public partial class lut_organizationtypeExt
+    public partial class lut_organizationtypeConverter
     {
         public static lut_organizationtype ConvertParams(string Identifier)
         {

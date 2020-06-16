@@ -3,7 +3,6 @@ using HealthVault.Entity.Model;
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using HealthVault.Entity.Model;
 
 namespace HealthVault.Entity.Context
 {
@@ -18,10 +17,12 @@ namespace HealthVault.Entity.Context
         {
         }
 
-        public virtual DbSet<Patient> Patient { get; set; }
         public virtual DbSet<lut_city> lut_city { get; set; }
+        public virtual DbSet<lut_country> lut_country { get; set; }
         public virtual DbSet<lut_organizationtype> lut_organizationtype { get; set; }
+        public virtual DbSet<lut_state> lut_state { get; set; }
         public virtual DbSet<organization> organization { get; set; }
+        public virtual DbSet<patient> patient { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -34,31 +35,17 @@ namespace HealthVault.Entity.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Patient>(entity =>
-            {
-                entity.HasKey(e => e.Record_ID);
-
-                entity.Property(e => e.birthDate).HasColumnType("date");
-
-                entity.Property(e => e.deceasedDate).HasColumnType("date");
-
-                entity.Property(e => e.familyname).HasMaxLength(80);
-
-                entity.Property(e => e.identifier).HasMaxLength(20);
-
-                entity.Property(e => e.name).HasMaxLength(50);
-
-                entity.Property(e => e.telecom).HasMaxLength(20);
-
-                entity.Property(e => e.telecom1).HasMaxLength(20);
-
-                entity.Property(e => e.telecom2).HasMaxLength(20);
-            });
-
             modelBuilder.Entity<lut_city>(entity =>
             {
                 entity.HasKey(e => e.Identifier)
                     .HasName("PK_LUTGovernorates");
+
+                entity.Property(e => e.Name).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<lut_country>(entity =>
+            {
+                entity.HasKey(e => e.Identifier);
 
                 entity.Property(e => e.Name).HasMaxLength(50);
             });
@@ -73,6 +60,13 @@ namespace HealthVault.Entity.Context
                     .HasMaxLength(100);
             });
 
+            modelBuilder.Entity<lut_state>(entity =>
+            {
+                entity.HasKey(e => e.Identifier);
+
+                entity.Property(e => e.Name).HasMaxLength(50);
+            });
+
             modelBuilder.Entity<organization>(entity =>
             {
                 entity.HasKey(e => e.identifier);
@@ -82,6 +76,32 @@ namespace HealthVault.Entity.Context
                 entity.Property(e => e.alias).HasMaxLength(100);
 
                 entity.Property(e => e.name).HasMaxLength(100);
+
+                entity.Property(e => e.telecom).HasMaxLength(20);
+
+                entity.Property(e => e.telecom1).HasMaxLength(20);
+
+                entity.Property(e => e.telecom2).HasMaxLength(20);
+            });
+
+            modelBuilder.Entity<patient>(entity =>
+            {
+                entity.HasKey(e => e.Record_ID)
+                    .HasName("PK_Patient");
+
+                entity.Property(e => e.address).HasMaxLength(80);
+
+                entity.Property(e => e.birth_date).HasColumnType("date");
+
+                entity.Property(e => e.deceased_date).HasColumnType("date");
+
+                entity.Property(e => e.email).HasMaxLength(80);
+
+                entity.Property(e => e.familyname).HasMaxLength(80);
+
+                entity.Property(e => e.identifier).HasMaxLength(20);
+
+                entity.Property(e => e.name).HasMaxLength(50);
 
                 entity.Property(e => e.telecom).HasMaxLength(20);
 

@@ -4,9 +4,9 @@ using HealthVault.Entity.Model;
 using HealthVault.Shared.System.Extensions;
 using System.Collections.Generic;
 
-namespace HealthVault.Shared
+namespace HealthVault.Shared.ParamsConverter
 {
-    public partial class organizationExt
+    public partial class organizationConverter
     {
         public static organization ConvertParams(string Identifier, string active, string type,
                            string address_city, string address_state, string partOf)

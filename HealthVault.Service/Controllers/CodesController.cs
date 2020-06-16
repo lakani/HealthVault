@@ -1,6 +1,6 @@
 using HealthVault.DAL;
 using HealthVault.Entity.Model;
-using HealthVault.Shared;
+using HealthVault.Shared.ParamsConverter;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -28,7 +28,7 @@ namespace HealthVault.Service.Controllers
                 }
                 else
                 {
-                    lut_city FilterObj = lut_cityExt.ConvertParams(Identifier);
+                    lut_city FilterObj = lut_cityConverter.ConvertParams(Identifier);
                     return codesDAL.lut_city_Filter(FilterObj);
                 }
             }
@@ -52,7 +52,7 @@ namespace HealthVault.Service.Controllers
                     return codes.lut_organizationtype_GetAll();
                 else
                 {
-                    lut_organizationtype FilterObj = lut_organizationtypeExt.ConvertParams(identifier);
+                    lut_organizationtype FilterObj = lut_organizationtypeConverter.ConvertParams(identifier);
                     return codes.lut_organizationtype_Filter(FilterObj);
                 }
             }

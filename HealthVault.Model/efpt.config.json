@@ -18,7 +18,15 @@
       },
       {
          "HasPrimaryKey": true,
+         "Name": "[dbo].[lut_country]"
+      },
+      {
+         "HasPrimaryKey": true,
          "Name": "[dbo].[lut_organizationtype]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[lut_state]"
       },
       {
          "HasPrimaryKey": true,
@@ -26,7 +34,7 @@
       },
       {
          "HasPrimaryKey": true,
-         "Name": "[dbo].[Patient]"
+         "Name": "[dbo].[patient]"
       }
    ],
    "UseDatabaseNames": true,

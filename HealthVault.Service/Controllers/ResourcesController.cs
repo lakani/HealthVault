@@ -1,6 +1,6 @@
 ﻿using HealthVault.DAL;
 using HealthVault.Entity.Model;
-using HealthVault.Shared;
+using HealthVault.Shared.ParamsConverter;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -53,7 +53,7 @@ namespace HealthVault.Service.Controllers
 
                 else
                 {
-                    organization FilterObj = organizationExt.ConvertParams(Identifier, active, type, addressCity, addressState, partof);
+                    organization FilterObj = organizationConverter.ConvertParams(Identifier, active, type, addressCity, addressState, partof);
                     OrganizationDAL OrgDAL = new OrganizationDAL();
                     return OrgDAL.Filter(FilterObj);
                 }

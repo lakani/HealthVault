@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace HealthVault.Entity.Model
 {
-    public partial class Patient
+    public partial class patient
     {
         public string identifier { get; set; }
         public int Record_ID { get; set; }
@@ -15,8 +15,14 @@ namespace HealthVault.Entity.Model
         public string telecom1 { get; set; }
         public string telecom2 { get; set; }
         public bool? gender { get; set; }
-        public DateTime? birthDate { get; set; }
+        public DateTime? birth_date { get; set; }
+        public short? birth_city { get; set; }
+        public string address { get; set; }
+        public short? address_city { get; set; }
+        public short? address_country { get; set; }
+        public short? address_state { get; set; }
+        public string email { get; set; }
         public bool? deceased { get; set; }
-        public DateTime? deceasedDate { get; set; }
+        public DateTime? deceased_date { get; set; }
     }
 }
