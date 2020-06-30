@@ -14,6 +14,23 @@ namespace HealthVault.DAL
             return db.patient.ToList();
         }
 
+
+        /*
+         * string           Identifier,
+         * string           addressCity
+         string             addressState
+         * 
+         * */
+
+        /*
+         * blic IEnumerable<organization> GetOrganization(     string Identifier,
+                                                            string addressCity,
+                                                            string partof,
+                                                            string type,
+                                                            string active,
+                                                            string addressState)
+        */
+
         public IEnumerable<Model.patient> Filter(Model.patient filterObj)
         {
 
