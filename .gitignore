@@ -202,3 +202,8 @@ HealthVault.Service/obj/Debug/netcoreapp3.1/project.razor.json
 /HealthVault.Model/obj/Release/netstandard2.0
 /HealthVault.Service/obj/Release/netcoreapp3.1
 /HealthVault.Web.Client/obj
+/.vs/HealthVault.App.Server/DesignTimeBuild/.dtbcache.v2
+/.vs/HealthVault.App.Server/v16/.suo
+/.vs/ProjectSettings.json
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
