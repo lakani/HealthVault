@@ -22,6 +22,10 @@
       },
       {
          "HasPrimaryKey": true,
+         "Name": "[dbo].[lut_general_usages]"
+      },
+      {
+         "HasPrimaryKey": true,
          "Name": "[dbo].[lut_organizationtype]"
       },
       {
@@ -35,6 +39,10 @@
       {
          "HasPrimaryKey": true,
          "Name": "[dbo].[patient]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[sysdiagrams]"
       }
    ],
    "UseDatabaseNames": true,

@@ -3,6 +3,7 @@ using HealthVault.Entity.Model;
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using HealthVault.Entity.Model;
 
 namespace HealthVault.Entity.Context
 {
@@ -19,6 +20,7 @@ namespace HealthVault.Entity.Context
 
         public virtual DbSet<lut_city> lut_city { get; set; }
         public virtual DbSet<lut_country> lut_country { get; set; }
+        public virtual DbSet<lut_general_usages> lut_general_usages { get; set; }
         public virtual DbSet<lut_organizationtype> lut_organizationtype { get; set; }
         public virtual DbSet<lut_state> lut_state { get; set; }
         public virtual DbSet<organization> organization { get; set; }
@@ -48,6 +50,17 @@ namespace HealthVault.Entity.Context
                 entity.HasKey(e => e.Identifier);
 
                 entity.Property(e => e.Name).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<lut_general_usages>(entity =>
+            {
+                entity.HasKey(e => e.Identifier);
+
+                entity.Property(e => e.table_name)
+                    .IsRequired()
+                    .HasMaxLength(100);
+
+                entity.Property(e => e.value).HasMaxLength(100);
             });
 
             modelBuilder.Entity<lut_organizationtype>(entity =>
