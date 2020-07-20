@@ -38,6 +38,16 @@ namespace HealthVault.DAL
                    select c;
         }
 
+        //lut_general_usages
+        public IEnumerable<lut_general_usages> lut_general_usages_GetTable(string stTableName)
+        {
+            var db = new HealthvaultContext();
+
+            return  from t in db.lut_general_usages
+                    where t.table_name == stTableName
+                    select t;
+        }
+
     }
 }
 
