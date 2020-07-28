@@ -62,5 +62,27 @@ namespace HealthVault.Service.Controllers
             }
         }
 
+        //lut_general_usages
+        [HttpGet]
+        [Route("v1/api/codes/general")]
+        public IEnumerable<lut_general_usages> GetTable(string TableName)
+        {
+            try
+            {
+                CodesDAL codes = new CodesDAL();
+
+                if (string.IsNullOrEmpty(TableName))
+                    throw new ArgumentException("TableName is mandatory");
+                else
+                {
+                    return codes.lut_general_usages_GetTable(TableName);
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
     }
 }
