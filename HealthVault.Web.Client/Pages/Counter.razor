@@ -9,13 +9,12 @@
 
 <div class="col-md-4">
     <select class="form-control" >
-        <option value="">-- Select City --</option>
+        @*<option value="">-- Select City --</option>*@
         @if (cities != null)
         {
             @foreach (var city in cities)
             {
                 <option value="@city.Name">@city.Name</option>
-
             }
         }
     </select>
