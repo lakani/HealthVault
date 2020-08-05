@@ -1,4 +1,5 @@
 ﻿@using HealthVault.Entity.Model
+@using HealthVault.Shared.DataTables
 @using System.Text.Json
 @page "/counter"
 @inject HttpClient Http
@@ -8,7 +9,7 @@
 <p>Current count: @currentCount</p>
 
 <div class="col-md-4">
-    <select class="form-control" >
+    <select class="form-control">
         @*<option value="">-- Select City --</option>*@
         @if (cities != null)
         {
@@ -18,15 +19,58 @@
             }
         }
     </select>
+
+    @*Condition of specimen   --> _Condition_of_specimen *@
+    <select class="form-control">
+        @*<option value="">-- Select City --</option>*@
+        @if (_Condition_of_specimen != null)
+        {
+            @foreach (var item in _Condition_of_specimen)
+            {
+                <option value="@item.Identifier">@item.value</option>
+            }
+        }
+    </select>
+
 </div>
 
-<div class="row" style="padding-top:50px"> </div> 
-        
+<div class="row" style="padding-top:50px"> </div>
+
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
     private int currentCount = 0;
     lut_city[] cities;
+    lut_general_usages[] _Male;                     //  Male
+    lut_general_usages[] _vaccinated;               //  vaccinated
+    lut_general_usages[] _VI_Status;                //  VI_Status
+    lut_general_usages[] _Measles_Epi_linked;       //  Measles Epi-linked
+    lut_general_usages[] _Rubella_Epi_linked;       //  Rubella Epi-linked
+    lut_general_usages[] _Type_of_specimen;         //  Type of specimen
+    lut_general_usages[] _Condition_of_specimen;    //  Condition of specimen
+    lut_general_usages[] _Measles_Kit;              //  Measles_Kit
+    lut_general_usages[] _Rubella_Kit;              //  Rubella_Kit
+    lut_general_usages[] _Measles_ELISA;            //  Measles ELISA
+    lut_general_usages[] _Rubella_ELISA;            //  Rubella ELISA
+    lut_general_usages[] _Id_Source;                //  Id_Source
+    lut_general_usages[] _FINAL_DIGNOSIS;           //  FINAL DIGNOSIS
+    lut_general_usages[] _Type2ndSpecimen;          //  Type2ndSpecimen
+    lut_general_usages[] _VG_Measles_RT_PCR;        //  VG_Measles_RT-PCR
+    lut_general_usages[] _VG_Rubella_RT_PCR;        //  VG_Rubella_RT-PCR
+    lut_general_usages[] _measles_genotype;         //  measles_genotype
+    lut_general_usages[] _rubella_genotype;         //  rubella_genotype
+    lut_general_usages[] _Sero_Kit;                 //  Sero_Kit
+    lut_general_usages[] _Sample_Sent2RL;           //  Sample_Sent2RL
+    lut_general_usages[] _Sero_Measles_IgM;         //  Sero_Measles_IgM
+    lut_general_usages[] _Sero_Measles_IgG;         //  Sero_Measles_IgG
+    lut_general_usages[] _Sero_Rubella_IgM;         //  Sero_Rubella_IgM
+    lut_general_usages[] _Sero_Rubella_IgG;         //  Sero_Rubella_IgG
+    lut_general_usages[] _IFA_Status;               //  IFA_Status
+    lut_general_usages[] _VI_Vero_SLAM;             //  VI_Vero_SLAM
+    lut_general_usages[] _IFA;                      //  IFA
+    lut_general_usages[] _VI_B95a;                  //  VI_B95a
+
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -39,7 +83,39 @@
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase
         };
         cities = JsonSerializer.Deserialize<lut_city[]>(s, options);
-        }
+
+        _Male = lut_general_usagesDataTable.GetTable("Male").ToArray();
+        _vaccinated = lut_general_usagesDataTable.GetTable("vaccinated").ToArray();
+        _VI_Status = lut_general_usagesDataTable.GetTable("VI_Status").ToArray();
+        _Measles_Epi_linked = lut_general_usagesDataTable.GetTable("Measles Epi-linked").ToArray();
+        _Rubella_Epi_linked = lut_general_usagesDataTable.GetTable("Rubella Epi-linked").ToArray();
+        _Type_of_specimen = lut_general_usagesDataTable.GetTable("Type of specimen").ToArray();
+        _Condition_of_specimen = lut_general_usagesDataTable.GetTable("Condition of specimen").ToArray();
+        _Measles_Kit = lut_general_usagesDataTable.GetTable("Measles_Kit").ToArray();
+        _Rubella_Kit = lut_general_usagesDataTable.GetTable("Rubella_Kit").ToArray();
+        _Measles_ELISA = lut_general_usagesDataTable.GetTable("Measles ELISA").ToArray();
+        _Rubella_ELISA = lut_general_usagesDataTable.GetTable("Rubella ELISA").ToArray();
+        _Id_Source = lut_general_usagesDataTable.GetTable("Id_Source").ToArray();
+        _FINAL_DIGNOSIS = lut_general_usagesDataTable.GetTable("FINAL DIGNOSIS").ToArray();
+        _Type2ndSpecimen = lut_general_usagesDataTable.GetTable("Type2ndSpecimen").ToArray();
+        _VG_Measles_RT_PCR = lut_general_usagesDataTable.GetTable("VG_Measles_RT-PCR").ToArray();
+        _VG_Rubella_RT_PCR = lut_general_usagesDataTable.GetTable("VG_Rubella_RT-PCR").ToArray();
+        _measles_genotype = lut_general_usagesDataTable.GetTable("measles_genotype").ToArray();
+        _rubella_genotype = lut_general_usagesDataTable.GetTable("rubella_genotype").ToArray();
+        _Sero_Kit = lut_general_usagesDataTable.GetTable("Sero_Kit").ToArray();
+        _Sample_Sent2RL = lut_general_usagesDataTable.GetTable("Sample_Sent2RL").ToArray();
+        _Sero_Measles_IgM = lut_general_usagesDataTable.GetTable("Sero_Measles_IgM").ToArray();
+        _Sero_Measles_IgG = lut_general_usagesDataTable.GetTable("Sero_Measles_IgG").ToArray();
+        _Sero_Rubella_IgM = lut_general_usagesDataTable.GetTable("Sero_Rubella_IgM").ToArray();
+        _Sero_Rubella_IgG = lut_general_usagesDataTable.GetTable("Sero_Rubella_IgG").ToArray();
+        _IFA_Status = lut_general_usagesDataTable.GetTable("IFA_Status").ToArray();
+        _VI_Vero_SLAM = lut_general_usagesDataTable.GetTable("VI_Vero_SLAM").ToArray();
+        _IFA = lut_general_usagesDataTable.GetTable("IFA").ToArray();
+        _VI_B95a = lut_general_usagesDataTable.GetTable("VI_B95a").ToArray();
+
+    }
+
+
 
     private void IncrementCount()
     {

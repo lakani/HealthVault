@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HealthVault.Model\HealthVault.Model.csproj" />
+    <ProjectReference Include="..\HealthVault.Shared\HealthVault.Shared.csproj" />
   </ItemGroup>
 
 </Project>
