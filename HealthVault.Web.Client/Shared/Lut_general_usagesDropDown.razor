@@ -1,0 +1,24 @@
+﻿@using HealthVault.Entity.Model
+@using HealthVault.Shared.DataTables
+
+<MatSelect Label=@Label @bind-Value="value1">
+    @if (Items != null)
+    {
+        @foreach (var item in Items)
+        {
+            <MatOptionString TValue="short" Value=@item.Identifier.ToString()>@item.value</MatOptionString>
+        }
+    }
+
+</MatSelect>
+
+@code {
+
+    string value1;
+
+    [Parameter]
+    public String Label { get; set; }
+
+    [Parameter]
+    public IEnumerable<lut_general_usages> Items { get; set; }
+}
