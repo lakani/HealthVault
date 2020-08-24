@@ -10,20 +10,19 @@
 
 <div class="col-md-4">
     <!--<select class="form-control">-->
-        @*<option value="">-- Select City --</option>*@
-        @*@if (cities != null)
+    @*<option value="">-- Select City --</option>*@
+    @*@if (cities != null)
+        {
+            @foreach (var city in cities)
             {
-                @foreach (var city in cities)
-                {
-                    <option value="@city.Name">@city.Name</option>
-                }
-            }*@
+                <option value="@city.Name">@city.Name</option>
+            }
+        }*@
     <!--</select>-->
-
     @*Condition of specimen   --> _Condition_of_specimen *@
     <!--<select class="form-control">-->
-        @*<option value="">-- Select City --</option>*@
-        <!--@if (_Condition_of_specimen != null)
+    @*<option value="">-- Select City --</option>*@
+    <!--@if (_Condition_of_specimen != null)
         {
             @foreach (var item in _Condition_of_specimen)
             {
@@ -32,35 +31,47 @@
         }
     </select>-->
 
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Male Label="Male"/>
-    @*<HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_vaccinated />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_VI_Status />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Measles_Epi_linked />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Rubella_Epi_linked />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Type_of_specimen />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Condition_of_specimen />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Measles_Kit />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Rubella_Kit />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Measles_ELISA />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Rubella_ELISA />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Id_Source />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_FINAL_DIGNOSIS />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Type2ndSpecimen />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_VG_Measles_RT_PCR />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_VG_Rubella_RT_PCR />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_measles_genotype />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_rubella_genotype />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Sero_Kit />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Sample_Sent2RL />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Sero_Measles_IgM />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Sero_Measles_IgG />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Sero_Rubella_IgM />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Sero_Rubella_IgG />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_IFA_Status />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_VI_Vero_SLAM />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_IFA />
-    <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_VI_B95a />*@
+    <MatTabGroup>
+        <MatTab Label="Personal & Geographic Info">
+            <MatTextField @bind-Value="@_NewCase.Name" Dense="true" Label="Name"></MatTextField>
+            <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Male Label="Gender" value="@_NewCase.Gender" />
+        </MatTab>
+        <MatTab Label="Details">
+            <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_vaccinated Label="vaccinated" />
+        </MatTab>
 
+    </MatTabGroup>
+
+
+    @*
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Male Label="Gender" />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_vaccinated />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_VI_Status />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Measles_Epi_linked />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Rubella_Epi_linked />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Type_of_specimen />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Condition_of_specimen />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Measles_Kit />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Rubella_Kit />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Measles_ELISA />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Rubella_ELISA />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Id_Source />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_FINAL_DIGNOSIS />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Type2ndSpecimen />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_VG_Measles_RT_PCR />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_VG_Rubella_RT_PCR />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_measles_genotype />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_rubella_genotype />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Sero_Kit />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Sample_Sent2RL />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Sero_Measles_IgM />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Sero_Measles_IgG />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Sero_Rubella_IgM />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_Sero_Rubella_IgG />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_IFA_Status />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_VI_Vero_SLAM />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_IFA />
+        <HealthVault.Web.Client.Shared.Lut_general_usagesDropDown Items=_VI_B95a />*@
 </div>
 
 <div class="row" style="padding-top:50px"> </div>
@@ -99,19 +110,10 @@
     lut_general_usages[] _IFA;                      //  IFA
     lut_general_usages[] _VI_B95a;                  //  VI_B95a
 
-
-
-    protected override async Task OnInitializedAsync()
+    MeaslesCase _NewCase;
+    protected override void OnInitialized()
     {
-        //cities = Http.GetFromJsonAsync<lut_city[]>("https://localhost:5001/v1/api/codes/city");
-
-
-        //var s = await Http.GetByteArrayAsync("https://localhost:5001/v1/api/codes/city");
-        //var options = new JsonSerializerOptions
-        //{
-            //PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-        //};
-        //cities = JsonSerializer.Deserialize<lut_city[]>(s, options);
+        _NewCase = new MeaslesCase();
 
         _Male = lut_general_usagesDataTable.GetTable("Male").ToArray();
         _vaccinated = lut_general_usagesDataTable.GetTable("vaccinated").ToArray();
@@ -141,6 +143,22 @@
         _VI_Vero_SLAM = lut_general_usagesDataTable.GetTable("VI_Vero_SLAM").ToArray();
         _IFA = lut_general_usagesDataTable.GetTable("IFA").ToArray();
         _VI_B95a = lut_general_usagesDataTable.GetTable("VI_B95a").ToArray();
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        //cities = Http.GetFromJsonAsync<lut_city[]>("https://localhost:5001/v1/api/codes/city");
+
+
+        //var s = await Http.GetByteArrayAsync("https://localhost:5001/v1/api/codes/city");
+        //var options = new JsonSerializerOptions
+        //{
+        //PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+        //};
+        //cities = JsonSerializer.Deserialize<lut_city[]>(s, options);
+
+
 
     }
 

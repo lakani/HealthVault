@@ -1,12 +1,12 @@
 ﻿@using HealthVault.Entity.Model
 @using HealthVault.Shared.DataTables
 
-<MatSelect Label=@Label @bind-Value="value1">
+<MatSelect Label=@Label @bind-Value="@value">
     @if (Items != null)
     {
         @foreach (var item in Items)
         {
-            <MatOptionString TValue="short" Value=@item.Identifier.ToString()>@item.value</MatOptionString>
+            <MatOptionString TValue="int" Value=@item.Identifier.ToString()>@item.value</MatOptionString>
         }
     }
 
@@ -14,7 +14,8 @@
 
 @code {
 
-    string value1;
+    [Parameter]
+    public short? value { get; set; }
 
     [Parameter]
     public String Label { get; set; }

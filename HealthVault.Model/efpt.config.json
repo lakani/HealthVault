@@ -2,8 +2,6 @@
    "ContextClassName": "HealthvaultContext",
    "ContextNamespace": "Entity.Context",
    "DefaultDacpacSchema": null,
-   "DoNotCombineNamespace": false,
-   "IdReplace": false,
    "IncludeConnectionString": true,
    "ModelNamespace": "Entity.Model",
    "OutputContextPath": "D:\\Projects\\HealthVault\\HealthVault.DAL",
@@ -34,15 +32,15 @@
       },
       {
          "HasPrimaryKey": true,
+         "Name": "[dbo].[MeaslesCase]"
+      },
+      {
+         "HasPrimaryKey": true,
          "Name": "[dbo].[organization]"
       },
       {
          "HasPrimaryKey": true,
          "Name": "[dbo].[patient]"
-      },
-      {
-         "HasPrimaryKey": true,
-         "Name": "[dbo].[sysdiagrams]"
       }
    ],
    "UseDatabaseNames": true,
@@ -51,5 +49,7 @@
    "UseHandleBars": false,
    "UseInflector": false,
    "UseLegacyPluralizer": false,
-   "UseSpatial": false
+   "UseNodaTime": false,
+   "UseSpatial": false,
+   "UseStoredProcedures": false
 }
